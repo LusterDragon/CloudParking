@@ -16,14 +16,6 @@ public class ParkingService {
 
 	private static HashMap<String, Parking> parkingMapping = new HashMap();
 	
-	static {
-		var id = getUUID();
-		var anotherID = getUUID();
-		Parking parking = new Parking(id, "DMS-1111", "SC", "CELTA","PRETO");
-		Parking anotherParking = new Parking(anotherID, "AWS-9282","PR", "WS GOL", "VERMLEHO");
-		parkingMapping.put(id, parking);
-		parkingMapping.put(anotherID, anotherParking);
-	}
 	
 	public List<Parking> findAll(){
 		return parkingMapping.values().stream().collect(Collectors.toList());
